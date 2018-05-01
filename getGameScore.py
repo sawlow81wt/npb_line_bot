@@ -1,4 +1,4 @@
-mport urllib3
+import urllib3
 import datetime
 import certifi
 from bs4 import BeautifulSoup
