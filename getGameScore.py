@@ -48,6 +48,3 @@ def get_today_score_list(favor_team):
         score_list.append("{0[0]} {1} {0[1]} {2}".format(cur_teams, score, cur_state))
         
     return score_list
-
-favor_team = "阪神"
-print(get_today_score_list(favor_team))
