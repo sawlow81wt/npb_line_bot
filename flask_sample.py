@@ -22,7 +22,7 @@ LINE_CHANNEL_SECRET=os.getenv("LINE_CHANNEL_SECRET", "not_a_find")
 line_bot_api = LineBotApi(LINE_ACCESS_TOKEN)
 handler = WebhookHandler(LINE_CHANNEL_SECRET)
 
-@app.route("test", methods=['GET'])
+@app.route("/test/", methods=['GET'])
 def ok():
     return "ok"
 
