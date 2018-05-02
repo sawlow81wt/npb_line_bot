@@ -24,7 +24,7 @@ handler = WebhookHandler(LINE_CHANNEL_SECRET)
 
 @app.route("/test/", methods=['GET'])
 def ok():
-    return "ok"
+    return "ok!"
 
 @app.route("/", methods=['POST'])
 def callbask():
