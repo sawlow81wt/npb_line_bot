@@ -4,7 +4,7 @@ ARG project_dir=/app/
 
 ADD requirements.txt $project_dir
 ADD flask_sample.py $project_dir
-ADD getGameScore.py $project_dir$project_di
+ADD getGameScore.py $project_dir
 
 WORKDIR $project_dir
 
