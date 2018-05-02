@@ -50,4 +50,3 @@ def get_today_score_list(favor_team):
     return score_list
 
 
-print(get_today_score_list("阪神"))
