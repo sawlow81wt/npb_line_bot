@@ -48,7 +48,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     text = event.message.text
-    reply_msg = "\n".join(getGameScore(text))
+    reply_msg = "\n".join(getGameScore.get_today_score_list(text))
     
     line_bot_api.reply_message(
         event.reply_token,
