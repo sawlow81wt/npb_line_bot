@@ -19,9 +19,6 @@ app = Flask(__name__)
 LINE_ACCESS_TOKEN=os.environ["LINE_ACCESS_TOKEN"]
 LINE_CHANNEL_SECRET=os.environ["LINE_CHANNEL_SECRET"]
 
-print(LINE_ACCESS_TOKEN)
-print(LINE_CHANNEL_SECRET)
-
 line_bot_api = LineBotApi(LINE_ACCESS_TOKEN)
 handler = WebhookHandler(LINE_CHANNEL_SECRET)
 
@@ -50,9 +47,12 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    text = event.message.text
+    reply_msg = "\n".join(getGameScore(text))
+    
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.message.text))
+        TextSendMessage(text=reply_msg))
 
 if __name__ == "__main__":
     app.run(ssl_context='adhoc')
