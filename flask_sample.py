@@ -27,7 +27,7 @@ def ok():
     return "ok!!"
 
 @app.route("/callback", methods=['POST'])
-def callbask():
+def callback():
 
     signature = request.headers['X-Line-Signature']
 
