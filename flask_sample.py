@@ -26,30 +26,29 @@ handler = WebhookHandler(LINE_CHANNEL_SECRET)
 def ok():
     return "ok!!"
 
-@app.route("/callback/", methods=['POST'])
+@app.route("/callback", methods=['POST'])
 def callback():
-
+    # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
 
+    # get request body as text
     body = request.get_data(as_text=True)
-    app.loger.info("Request body: {}".format(body))
+    app.logger.info("Request body: " + body)
 
+    # handle webhook body
     try:
         handler.handle(body, signature)
     except InvalidSignatureError:
         abort(400)
-    
-    return 'ok'
+
+    return 'OK'
+
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    favor_team = event.message.text
-    data = getGameScore.get_today_score_list(favor_team)
-    reply_message = "\n".join(data)
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=reply_message)
-    )
+        TextSendMessage(text=event.message.text))
 
 if __name__ == "__main__":
-    app.run(ssl_context='adhoc', debug=True)
+    app.run(ssl_context='adhoc')
