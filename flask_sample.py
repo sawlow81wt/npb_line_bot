@@ -26,7 +26,7 @@ handler = WebhookHandler(LINE_CHANNEL_SECRET)
 def ok():
     return "ok!!"
 
-@app.route("/", methods=['POST'])
+@app.route("/callback", methods=['POST'])
 def callbask():
 
     signature = request.headers['X-Line-Signature']
