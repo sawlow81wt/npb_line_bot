@@ -1,7 +1,13 @@
 from flask import Flask, jsonify, request
+import os
 import json
 import getGameScore
 app = Flask(__name__)
+
+
+LINE_ACCESS_TOKEN=os.getenv("LINE_ACCESS_TOKEN")
+LINE_CHANNEL_SECRET=os.getenv("LINE_CHANNEL_SECRET")
+
 
 @app.route("/", methods=['GET'])
 def post():
