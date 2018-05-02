@@ -35,7 +35,7 @@ def callbask():
     app.loger.info("Request body: {}".format(body))
 
     try:
-        handler.handl(body, signature)
+        handler.handle(body, signature)
     except InvalidSignatureError:
         abort(400)
     
