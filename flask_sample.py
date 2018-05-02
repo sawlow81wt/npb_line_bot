@@ -19,6 +19,9 @@ app = Flask(__name__)
 LINE_ACCESS_TOKEN=os.environ["LINE_ACCESS_TOKEN"]
 LINE_CHANNEL_SECRET=os.environ["LINE_CHANNEL_SECRET"]
 
+print(LINE_ACCESS_TOKEN)
+print(LINE_CHANNEL_SECRET)
+
 line_bot_api = LineBotApi(LINE_ACCESS_TOKEN)
 handler = WebhookHandler(LINE_CHANNEL_SECRET)
 
