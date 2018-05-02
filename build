@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/develop/flask/app/
+cd $(dirname $0); pwd
 
 docker ps | grep flask
 
