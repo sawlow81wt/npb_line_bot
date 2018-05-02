@@ -13,4 +13,4 @@ RUN pip install -r requirements.txt
 ENV FLASK_APP flask_sample.py
 ENV FLASK_DEBUG 1
 
-CMD ["gunicorn", "--certfile", "/certs/cert.pem", "--keyfile", "/certs/key.pem", "-b", "0.0.0.0:5000", "flask_sample:app"]
+CMD ["gunicorn", "--certfile", "/certs/cert.pem", "--keyfile", "/certs/key.pem", "-b", "0.0.0.0:5000", "flask_sample:app", "--log-file", "-"]
