@@ -16,7 +16,7 @@ def get_today_score_list(favor_team):
         return "{0[0]}-{0[1]}".format(score)
     
     def get_inning():
-        return score_board.find("td", {"class": "active yjMSt bt bb"}).find("a").text
+        return score_board.find("td", {"class": "{} yjMSt bt bb".format(game_state)}).find("a").text
     
     if favor_team not in team_list:
         msg = "そんなチームは存在せんぞ"
@@ -41,10 +41,13 @@ def get_today_score_list(favor_team):
                       if score_board.find("td", {"class": "{0} yjMSt bt bb".format(item)})][0]
         
         # 試合前なら開始時刻,それ以外はスコアを表示
-        score, cur_state = [score_board.find("em").text, "試合前"] if game_state == "standby" else \
+        score, cur_state = [score_board.find("em").text, get_inning()] if game_state == "standby" else \
                            [get_score(), "試合終了"] if game_state == "end" else \
                            [get_score(), get_inning()]
             
         score_list.append("{0[0]} {1} {0[1]} {2}".format(cur_teams, score, cur_state))
         
     return score_list
+
+
+print(get_today_score_list("阪神"))
