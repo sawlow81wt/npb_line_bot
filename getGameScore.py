@@ -42,8 +42,8 @@ def get_today_score_list(favor_team):
         
         # 試合前なら開始時刻,それ以外はスコアを表示
         score, cur_state = [score_board.find("em").text, get_inning()] if game_state == "standby" else \
-                           [get_score(), "試合終了"] if game_state == "end" else \
-                           [get_score(), get_inning()]
+                           [get_score(), "試合終了"]                    if game_state == "end" else \
+                           [get_score(), get_inning()]                 #  game_satate == "active"
             
         score_list.append("{0[0]} {1} {0[1]} {2}".format(cur_teams, score, cur_state))
         
