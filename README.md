@@ -1,7 +1,7 @@
 # npb_line_bot
 
 
-NPB Latest news that impede spoilers.
+NPB Latest news that prevent spoilers.
 
 ## requirement
 + Docker version 18.03.1-ce
