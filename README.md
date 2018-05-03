@@ -1,5 +1,5 @@
 # npb_line_bot
-====
+
 
 NPB Latest news that impede spoilers.
 
@@ -11,9 +11,10 @@ You need to put the certificate files fullchain.pem and key.pem in the /certs/fl
 
 ## usage
 
-+clone it.
-> cd app
++ clone it.
+> cd app \n
 > ./build
 
-callback url is > https://your.server.name:5000/callback
+callback url is 
+> https://your.server.name:5000/callback
 
