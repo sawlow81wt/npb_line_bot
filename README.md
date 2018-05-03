@@ -24,3 +24,6 @@ You need to set some environment variables. Please obtain access token and chann
 callback url is 
 > https://your.server.name:5000/callback
 
+## QR code
+
+!(https://github.com/sawlow81wt/npb_line_bot/img/nlp_news.png)
