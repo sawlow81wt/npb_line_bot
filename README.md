@@ -4,7 +4,7 @@
 NPB Latest news that impede spoilers.
 
 ## requirement
-+Docker version 18.03.1-ce
++ Docker version 18.03.1-ce
 
 ## Certification
 You need to put the certificate files fullchain.pem and key.pem in the /certs/flask/.
@@ -12,7 +12,7 @@ You need to put the certificate files fullchain.pem and key.pem in the /certs/fl
 ## usage
 
 + clone it.
-> cd app \n
+> cd app  
 > ./build
 
 callback url is 
