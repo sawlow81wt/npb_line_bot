@@ -26,4 +26,4 @@ callback url is
 
 ## QR code
 
-![](https://github.com/sawlow81wt/npb_line_bot/img/nlp_news.png)
+![](https://github.com/sawlow81wt/npb_line_bot/blob/master/img/nlp_news.png)
