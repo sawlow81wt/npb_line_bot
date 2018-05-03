@@ -17,8 +17,7 @@ You need to set some environment variables. Please obtain access token and chann
 
 ## usage
 
-+ clone it.
-> cd app  
++ clone it.　　
 > ./build
 
 callback url is 
